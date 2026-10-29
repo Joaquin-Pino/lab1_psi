@@ -1,3 +1,98 @@
-.env
-*.md
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
 
+# --- Entornos virtuales ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Empaquetado / instalación (pip install -e .) ---
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# --- Pruebas, cobertura y linters ---
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Datos (el enunciado exige NO versionarlos) ---
+data/
+datos/
+datasets/
+fma_small/
+fma_metadata/
+*.mp3
+*.wav
+*.flac
+*.ogg
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.dat
+*.hea
+*.atr
+
+# --- Salidas generadas por `docker compose run --rm lab1` ---
+# Las figuras y tablas se regeneran con un comando; no se versionan.
+# Ojo: informe/lab1.pdf SÍ se entrega (ver excepción abajo).
+figuras/
+resultados/
+salidas/
+output/
+outputs/
+
+# --- Informe: ignorar intermedios de LaTeX, conservar el PDF final ---
+informe/*.aux
+informe/*.log
+informe/*.out
+informe/*.toc
+informe/*.bbl
+informe/*.blg
+informe/*.synctex.gz
+!informe/lab1.pdf
+
+# --- Docker ---
+# (no ignores Dockerfile ni compose.yaml: deben versionarse)
+.docker/
+docker-compose.override.yml
+
+# --- Variables de entorno y secretos ---
+.env
+.env.*
+!.env.example
+
+# --- Editores / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*.md
+!README.md
