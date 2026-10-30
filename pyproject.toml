@@ -21,6 +21,7 @@ dependencies = [
 "matplotlib>=3.8",
 "scipy>=1.11",
 "pydub>=0.25.1",
+"audioop-lts>=0.2; python_version>='3.13'",  # pydub usa audioop, eliminado en 3.13
 ]
 
 [project.optional-dependencies]
