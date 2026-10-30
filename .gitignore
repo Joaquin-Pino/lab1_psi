@@ -54,8 +54,6 @@ fma_metadata/
 *.atr
 
 # --- Salidas generadas por `docker compose run --rm lab1` ---
-# Las figuras y tablas se regeneran con un comando; no se versionan.
-# Ojo: informe/lab1.pdf SÍ se entrega (ver excepción abajo).
 figuras/
 resultados/
 salidas/
@@ -70,10 +68,9 @@ informe/*.toc
 informe/*.bbl
 informe/*.blg
 informe/*.synctex.gz
-!informe/lab1.pdf
+!informe/informe.pdf
 
 # --- Docker ---
-# (no ignores Dockerfile ni compose.yaml: deben versionarse)
 .docker/
 docker-compose.override.yml
 
@@ -96,3 +93,4 @@ desktop.ini
 
 *.md
 !README.md
+*.pdf
