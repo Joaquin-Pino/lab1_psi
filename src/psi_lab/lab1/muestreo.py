@@ -1,9 +1,16 @@
 from __future__ import annotations
 
+from collections.abc import Callable
+
 import numpy as np
+from numpy.typing import NDArray
 
 
-def muestrear(fun, fs, duracion):
+def muestrear(
+    fun: Callable[[NDArray[np.float64]], NDArray[np.float64]],
+    fs: float,
+    duracion: float,
+) -> tuple[NDArray[np.float64], NDArray[np.float64]]:
     """
     Evalúa fun(t) en t = n / fs, n = 0..N-1. Retorna (t, x).
     """
@@ -13,13 +20,17 @@ def muestrear(fun, fs, duracion):
     x = fun(t)
     return t, x
 
-def frecuencia_alias(f, fs):
+
+def frecuencia_alias(
+    f: float | NDArray[np.float64], fs: float
+) -> float | NDArray[np.float64]:
     """
     Calcula la frecuencia aparente en [0, fs/2] de una senoidal de f Hz muestreada a fs.
     """
     return np.abs((f + fs / 2) % fs - fs / 2)
 
-def frecuencia_medida(x: np.ndarray, fs: float) -> float:
+
+def frecuencia_medida(x: NDArray[np.float64], fs: float) -> float:
     """
     Estima la frecuencia aparente (Hz, en [0, fs/2]) de una senoidal muestreada,
     SIN usar la DFT: busca la f que mejor ajusta por minimos cuadrados el modelo
