@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def muestrear(fun, fs, duracion):
     """
     Evalúa fun(t) en t = n / fs, n = 0..N-1. Retorna (t, x).
