@@ -1,0 +1,11 @@
+services:
+  tests:
+    build: .
+    command: pytest
+
+  lab1:
+    build: .
+    # TODO: reemplazar por el script que descarga/genera los datos y regenera todas las figuras y tablas del informe.
+    command: python -m psi_lab.lab1.caso_audio
+    volumes:
+      - ./informe:/app/informe

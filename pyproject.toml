@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psi-lab1"
+version = "0.1.0"
+description = "Laboratorios de Procesamiento de Señales e Imágenes (13318), USACH"
+
+readme = "README.md"
+
+requires-python = ">=3.13"
+authors = [
+    { name = "Andres Candia", email = "andres.candia@usach.cl" },
+    { name = "Diego Cumare", email = "diego.cumare@usach.cl" },
+    { name = "Joaquin Pino", email = "joaquin.pino@usach.cl" },
+]
+
+dependencies = [
+"numpy>=1.26",
+"matplotlib>=3.8",
+"scipy>=1.11",
+"pydub>=0.25.1",
+"audioop-lts>=0.2; python_version>='3.13'",  # pydub usa audioop, eliminado en 3.13
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.5"]
+notebook = ["jupyterlab>=4"]
+
+# [project.scripts]
+# psi-demo = "psi_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
